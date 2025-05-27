@@ -35,7 +35,19 @@ final class AppCoordinator: Coordinator {
     }
 
     private func showLaunchList() {
-        let launchListVC = LaunchListViewController()
+        let service = LaunchesService()
+        let viewModel = LaunchListViewModel(service: service)
+        
+        viewModel.onLaunchSelected = { [weak self] launch in
+            self?.showLaunchDetail(for: launch)
+        }
+
+        let launchListVC = LaunchListViewController(viewModel: viewModel)
         navigationController.setViewControllers([launchListVC], animated: true)
+    }
+
+    private func showLaunchDetail(for launch: LaunchModel) {
+        // TODO: - Navigate to detail
+        print("Navegar a detalle de: \(launch.missionName)")
     }
 }
