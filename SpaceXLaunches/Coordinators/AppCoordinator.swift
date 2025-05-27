@@ -7,9 +7,11 @@
 
 import Foundation
 import UIKit
+import SafariServices
 
 protocol LaunchDetailCoordinatorDelegate: AnyObject {
     func didTapYouTubeVideo(videoId: String)
+    func didTapLaunchInfo(url: URL)
 }
 
 protocol Coordinator {
@@ -66,5 +68,10 @@ final class AppCoordinator: Coordinator {
 extension AppCoordinator: LaunchDetailCoordinatorDelegate {
     func didTapYouTubeVideo(videoId: String) {
         showYouTubeVideo(with: videoId)
+    }
+    
+    func didTapLaunchInfo(url: URL) {
+        let safariVC = SFSafariViewController(url: url)
+        navigationController.present(safariVC, animated: true)
     }
 }
