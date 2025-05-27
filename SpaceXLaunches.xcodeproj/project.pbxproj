@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C92DE832DE5F63900E923C2 /* YouTubeiOSPlayerHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 6C92DE822DE5F63900E923C2 /* YouTubeiOSPlayerHelper */; };
 		6CCC05582DE545190093179C /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 6CCC05572DE545190093179C /* Lottie */; };
 		6CD2E0F32DE5649A00506B93 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 6CD2E0F22DE5649A00506B93 /* Alamofire */; };
 		6CD2E16B2DE576A600506B93 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 6CD2E16A2DE576A600506B93 /* Kingfisher */; };
@@ -58,6 +59,7 @@
 				6CD2E16B2DE576A600506B93 /* Kingfisher in Frameworks */,
 				6CCC05582DE545190093179C /* Lottie in Frameworks */,
 				6CD2E0F32DE5649A00506B93 /* Alamofire in Frameworks */,
+				6C92DE832DE5F63900E923C2 /* YouTubeiOSPlayerHelper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +106,7 @@
 				6CCC05572DE545190093179C /* Lottie */,
 				6CD2E0F22DE5649A00506B93 /* Alamofire */,
 				6CD2E16A2DE576A600506B93 /* Kingfisher */,
+				6C92DE822DE5F63900E923C2 /* YouTubeiOSPlayerHelper */,
 			);
 			productName = SpaceXLaunches;
 			productReference = 6CCC05312DE5420C0093179C /* SpaceXLaunches.app */;
@@ -137,6 +140,7 @@
 				6CCC05562DE545190093179C /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				6CD2E0F12DE5649A00506B93 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				6CD2E1692DE576A600506B93 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				6C92DE812DE5F63900E923C2 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 6CCC05322DE5420C0093179C /* Products */;
@@ -368,6 +372,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		6C92DE812DE5F63900E923C2 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/youtube/youtube-ios-player-helper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.4;
+			};
+		};
 		6CCC05562DE545190093179C /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios";
@@ -395,6 +407,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		6C92DE822DE5F63900E923C2 /* YouTubeiOSPlayerHelper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6C92DE812DE5F63900E923C2 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */;
+			productName = YouTubeiOSPlayerHelper;
+		};
 		6CCC05572DE545190093179C /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6CCC05562DE545190093179C /* XCRemoteSwiftPackageReference "lottie-ios" */;
