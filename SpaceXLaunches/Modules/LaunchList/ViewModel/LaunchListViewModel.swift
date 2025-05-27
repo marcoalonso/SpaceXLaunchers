@@ -13,6 +13,8 @@ final class LaunchListViewModel {
     @Published private(set) var launches: [LaunchModel] = []
     @Published private(set) var isLoading = false
     @Published private(set) var errorMessage: String?
+    
+    var onLaunchSelected: ((LaunchModel) -> Void)?
 
     private let service: LaunchesServiceProtocol
     private var cancellables = Set<AnyCancellable>()
@@ -35,5 +37,9 @@ final class LaunchListViewModel {
                 self?.launches = launches
             }
             .store(in: &cancellables)
+    }
+    
+    func selectLaunch(_ launch: LaunchModel) {
+        onLaunchSelected?(launch)
     }
 }
