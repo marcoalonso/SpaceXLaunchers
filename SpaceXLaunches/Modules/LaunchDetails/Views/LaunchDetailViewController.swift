@@ -90,6 +90,11 @@ class LaunchDetailViewController: UIViewController {
         collectionView.setContentOffset(offset, animated: true)
     }
     
+    @IBAction func openLaunchInfo(_ sender: UIButton) {
+        guard let url = viewModel.infoURL else { return }
+        coordinatorDelegate?.didTapLaunchInfo(url: url)
+    }
+    
     @IBAction func openYouTubeFullScreen(_ sender: UIButton) {
         guard let videoId = viewModel.youtubeId else { return }
         coordinatorDelegate?.didTapYouTubeVideo(videoId: videoId)

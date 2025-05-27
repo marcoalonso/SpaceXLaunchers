@@ -129,6 +129,9 @@
                                     <integer key="value" value="25"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="openLaunchInfo:" destination="-1" eventType="touchUpInside" id="pxQ-TM-9WJ"/>
+                            </connections>
                         </button>
                     </subviews>
                 </stackView>
