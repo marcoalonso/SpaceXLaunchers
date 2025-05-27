@@ -10,7 +10,7 @@ import UIKit
 import Lottie
 
 final class SplashViewController: UIViewController {
-    
+    var onAnimationCompleted: (() -> Void)?
     private let animationView = LottieAnimationView(name: "rocket")
 
     override func viewDidLoad() {
@@ -50,8 +50,7 @@ final class SplashViewController: UIViewController {
     private func playAnimation() {
         animationView.play { [weak self] finished in
             if finished {
-                // TODO: - Coordinator
-                print("Lottie finished!")
+                self?.onAnimationCompleted?()
             }
         }
     }
