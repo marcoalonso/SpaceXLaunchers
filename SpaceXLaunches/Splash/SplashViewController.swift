@@ -10,14 +10,15 @@ import UIKit
 import Lottie
 
 final class SplashViewController: UIViewController {
-    var onAnimationCompleted: (() -> Void)?
-    private let animationView = LottieAnimationView(name: "rocket")
+
+    private let upperAnimationView = LottieAnimationView(name: "moon")
+    private let rocketAnimationView = LottieAnimationView(name: "rocket")
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBackground()
-        setupLottieAnimation()
-        playAnimation()
+        setupLottieAnimations()
+        playAnimations()
     }
 
     private func setupBackground() {
@@ -25,7 +26,7 @@ final class SplashViewController: UIViewController {
         backgroundImage.contentMode = .scaleAspectFill
         backgroundImage.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(backgroundImage)
-        
+
         NSLayoutConstraint.activate([
             backgroundImage.topAnchor.constraint(equalTo: view.topAnchor),
             backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -34,24 +35,38 @@ final class SplashViewController: UIViewController {
         ])
     }
 
-    private func setupLottieAnimation() {
-        animationView.translatesAutoresizingMaskIntoConstraints = false
-        animationView.contentMode = .scaleAspectFit
-        view.addSubview(animationView)
+    private func setupLottieAnimations() {
+        upperAnimationView.translatesAutoresizingMaskIntoConstraints = false
+        upperAnimationView.contentMode = .scaleAspectFit
+        view.addSubview(upperAnimationView)
+
+        rocketAnimationView.translatesAutoresizingMaskIntoConstraints = false
+        rocketAnimationView.contentMode = .scaleAspectFit
+        view.addSubview(rocketAnimationView)
 
         NSLayoutConstraint.activate([
-            animationView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            animationView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            animationView.widthAnchor.constraint(equalToConstant: 200),
-            animationView.heightAnchor.constraint(equalToConstant: 200)
+            upperAnimationView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            upperAnimationView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            upperAnimationView.widthAnchor.constraint(equalToConstant: 200),
+            upperAnimationView.heightAnchor.constraint(equalToConstant: 200),
+
+            rocketAnimationView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40),
+            rocketAnimationView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            rocketAnimationView.widthAnchor.constraint(equalToConstant: 300),
+            rocketAnimationView.heightAnchor.constraint(equalToConstant: 300)
         ])
     }
 
-    private func playAnimation() {
-        animationView.play { [weak self] finished in
+    private func playAnimations() {
+        upperAnimationView.loopMode = .loop
+        upperAnimationView.play()
+
+        rocketAnimationView.play { [weak self] finished in
             if finished {
                 self?.onAnimationCompleted?()
             }
         }
     }
+
+    var onAnimationCompleted: (() -> Void)?
 }
