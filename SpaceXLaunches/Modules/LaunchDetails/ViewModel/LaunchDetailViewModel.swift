@@ -18,6 +18,8 @@ final class LaunchDetailViewModel {
     let flickrImages: [String]
     let youtubeId: String?
     let infoURL: URL?
+    let articleURL: URL?
+    let wikipediaURL: URL?
 
     init(launch: LaunchModel) {
         self.missionName = launch.missionName
@@ -29,5 +31,7 @@ final class LaunchDetailViewModel {
         self.flickrImages = launch.links.flickrImages
         self.youtubeId = launch.links.youtubeId
         self.infoURL = URL(string: launch.links.wikipedia ?? launch.links.articleLink ?? "")
+        self.articleURL = URL(string: launch.links.articleLink ?? "")
+        self.wikipediaURL = URL(string: launch.links.wikipedia ?? "")
     }
 }

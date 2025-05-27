@@ -113,6 +113,9 @@
                                     </constraints>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain"/>
+                                    <connections>
+                                        <action selector="openYouTubeFullScreen:" destination="-1" eventType="touchUpInside" id="1aC-z2-UDY"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sv9-iQ-8Pi">
                                     <rect key="frame" x="80" y="0.0" width="270" height="50"/>
@@ -142,6 +145,9 @@
                                     </constraints>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain"/>
+                                    <connections>
+                                        <action selector="openArticleLink:" destination="-1" eventType="touchUpInside" id="x87-rn-xVI"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGR-7m-3nU">
                                     <rect key="frame" x="80" y="0.0" width="270" height="50"/>
@@ -158,7 +164,7 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                     <connections>
-                                        <action selector="openLaunchInfo:" destination="-1" eventType="touchUpInside" id="pxQ-TM-9WJ"/>
+                                        <action selector="openWikipediaLink:" destination="-1" eventType="touchUpInside" id="pxQ-TM-9WJ"/>
                                     </connections>
                                 </button>
                             </subviews>
