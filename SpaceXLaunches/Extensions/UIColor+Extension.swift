@@ -29,6 +29,6 @@ extension UIColor {
     static let error = UIColor(hex: "#FF5E5E")
     static let background = UIColor(hex: "#0B0C10")
     static let surface = UIColor(hex: "#1F1F1F")
-    static let textPrimary = UIColor(hex: "#EAEAEA")
+    static let textPrimary = UIColor(hex: "#4A4A4A")
     static let textSecondary = UIColor(hex: "#A3A3A3")
 }

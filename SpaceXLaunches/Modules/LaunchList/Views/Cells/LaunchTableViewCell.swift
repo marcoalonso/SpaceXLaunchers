@@ -27,9 +27,9 @@ class LaunchTableViewCell: UITableViewCell {
         containerView.layer.cornerRadius = 12
         
         containerView.layer.shadowColor = UIColor.black.cgColor
-        containerView.layer.shadowOpacity = 0.3
-        containerView.layer.shadowOffset = CGSize(width: 0, height: 5)
-        containerView.layer.shadowRadius = 9
+        containerView.layer.shadowOpacity = 0.15
+        containerView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        containerView.layer.shadowRadius = 4
         
         containerView.layer.masksToBounds = false
         contentView.backgroundColor = .clear

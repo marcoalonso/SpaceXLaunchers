@@ -53,6 +53,11 @@ class LaunchDetailViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.tintColor = .black
+    }
+    
     private func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -85,9 +90,21 @@ class LaunchDetailViewController: UIViewController {
         rocketNameLabel.text = "Rocket name: \(viewModel.rocketName)"
         rocketTypeLabel.text = "Rocket type: \(viewModel.rocketType)"
         descriptionLabel.text = viewModel.details
+        
+        let infoLabels: [UILabel] = [
+            siteLabel,
+            dateLabel,
+            rocketNameLabel,
+            rocketTypeLabel,
+            descriptionLabel
+        ]
+
+        infoLabels.forEach { $0.textColor = .textPrimary }
 
         youtubeCircleButton.applyCircleStyle(iconName: "play.fill")
         safariCircleButton.applyCircleStyle(iconName: "info.circle.fill")
+        view.backgroundColor = UIColor.systemGroupedBackground
+        collectionView.backgroundColor = view.backgroundColor
     }
     
     @IBAction func pageControlValueChanged(_ sender: UIPageControl) {

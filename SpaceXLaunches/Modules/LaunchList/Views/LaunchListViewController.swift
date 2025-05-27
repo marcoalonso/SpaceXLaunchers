@@ -31,10 +31,13 @@ class LaunchListViewController: UIViewController {
         setupTableView()
         bindViewModel()
         viewModel.fetchLaunches()
+        setupUI()
     }
     
     private func setupUI() {
-        titleLabel.textColor = .primary
+        title = "Space X 🚀"
+        view.backgroundColor = UIColor.systemGroupedBackground
+        launchesTableView.backgroundColor = view.backgroundColor
     }
     
     private func setupTableView() {

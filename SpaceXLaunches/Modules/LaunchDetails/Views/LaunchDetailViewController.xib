@@ -85,6 +85,7 @@
                             </connections>
                         </pageControl>
                     </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="190" id="nOZ-OG-4Kg"/>
                     </constraints>

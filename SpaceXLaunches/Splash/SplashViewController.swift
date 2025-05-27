@@ -20,6 +20,14 @@ final class SplashViewController: UIViewController {
         setupLottieAnimations()
         playAnimations()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+            self?.onAnimationCompleted?()
+        }
+    }
 
     private func setupBackground() {
         let backgroundImage = UIImageView(image: UIImage(named: "earth"))

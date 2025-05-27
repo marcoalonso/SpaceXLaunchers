@@ -56,6 +56,11 @@ final class AppCoordinator: Coordinator {
         let detailVM = LaunchDetailViewModel(launch: launch)
         let detailVC = LaunchDetailViewController(viewModel: detailVM)
         detailVC.coordinatorDelegate = self
+        
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationController.topViewController?.navigationItem.backBarButtonItem = backItem
+        
         navigationController.pushViewController(detailVC, animated: true)
     }
     
