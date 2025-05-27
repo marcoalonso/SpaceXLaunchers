@@ -10,6 +10,7 @@ import Combine
 
 class LaunchListViewController: UIViewController {
     
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var launchesTableView: UITableView!
     
     private let viewModel: LaunchListViewModel
@@ -30,6 +31,10 @@ class LaunchListViewController: UIViewController {
         setupTableView()
         bindViewModel()
         viewModel.fetchLaunches()
+    }
+    
+    private func setupUI() {
+        titleLabel.textColor = .primary
     }
     
     private func setupTableView() {
