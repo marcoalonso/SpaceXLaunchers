@@ -10,6 +10,7 @@ import Combine
 
 class LaunchListViewController: UIViewController {
     
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var launchesTableView: UITableView!
     
@@ -38,6 +39,8 @@ class LaunchListViewController: UIViewController {
         title = "Space X 🚀"
         view.backgroundColor = UIColor.systemGroupedBackground
         launchesTableView.backgroundColor = view.backgroundColor
+        searchBar.delegate = self
+        searchBar.placeholder = "Search by mission or site"
     }
     
     private func setupTableView() {
@@ -78,7 +81,8 @@ extension LaunchListViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "LaunchCell", for: indexPath) as? LaunchTableViewCell else {
+        guard viewModel.launches.indices.contains(indexPath.row),
+              let cell = tableView.dequeueReusableCell(withIdentifier: "LaunchCell", for: indexPath) as? LaunchTableViewCell else {
             return UITableViewCell()
         }
         cell.configure(with: viewModel.launches[indexPath.row])
@@ -100,5 +104,15 @@ extension LaunchListViewController: UITableViewDataSource, UITableViewDelegate {
         cell.contentView.layer.cornerRadius = 12
         cell.contentView.layer.borderWidth = 0
         cell.backgroundColor = .clear
+    }
+}
+
+extension LaunchListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.filterLaunches(query: searchText)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
 }

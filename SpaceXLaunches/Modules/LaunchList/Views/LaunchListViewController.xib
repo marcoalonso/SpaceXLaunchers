@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LaunchListViewController" customModule="SpaceXLaunches" customModuleProvider="target">
             <connections>
                 <outlet property="launchesTableView" destination="9Ps-YA-XlT" id="7d3-mL-F2l"/>
+                <outlet property="searchBar" destination="03l-gb-ODw" id="cVg-Kw-XqN"/>
                 <outlet property="titleLabel" destination="eLV-qx-IQL" id="bcA-4k-hfo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -27,17 +28,30 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9Ps-YA-XlT">
-                    <rect key="frame" x="0.0" y="83" width="393" height="745"/>
+                    <rect key="frame" x="0.0" y="128" width="393" height="700"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="03l-gb-ODw">
+                    <rect key="frame" x="0.0" y="79" width="393" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="VJe-fj-jn2"/>
+                    </constraints>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="kQ3-2D-ylB"/>
+                    </connections>
+                </searchBar>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="03l-gb-ODw" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="5YN-0y-Wk5"/>
                 <constraint firstItem="9Ps-YA-XlT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="9EP-p1-jaL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9Ps-YA-XlT" secondAttribute="trailing" id="CHj-GU-Gtg"/>
-                <constraint firstItem="9Ps-YA-XlT" firstAttribute="top" secondItem="eLV-qx-IQL" secondAttribute="bottom" constant="5" id="CVy-1w-Sp0"/>
                 <constraint firstItem="eLV-qx-IQL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="DDS-6L-EUT"/>
+                <constraint firstItem="03l-gb-ODw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HZJ-2F-Vma"/>
+                <constraint firstItem="9Ps-YA-XlT" firstAttribute="top" secondItem="03l-gb-ODw" secondAttribute="bottom" constant="5" id="QpE-BF-kqZ"/>
+                <constraint firstItem="03l-gb-ODw" firstAttribute="top" secondItem="eLV-qx-IQL" secondAttribute="bottom" constant="1" id="fwc-M7-tvn"/>
                 <constraint firstItem="9Ps-YA-XlT" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="10" id="ldw-1n-fxG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eLV-qx-IQL" secondAttribute="trailing" constant="20" id="sL6-St-dau"/>
                 <constraint firstItem="eLV-qx-IQL" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-5" id="u4I-zI-gNx"/>
