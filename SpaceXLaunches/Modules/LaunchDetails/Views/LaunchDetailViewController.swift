@@ -20,6 +20,9 @@ class LaunchDetailViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
     
+    @IBOutlet weak var youtubeCircleButton: UIButton!
+    @IBOutlet weak var safariCircleButton: UIButton!
+    
     @IBOutlet weak var collectionHeightConstraint: NSLayoutConstraint!
     weak var coordinatorDelegate: LaunchDetailCoordinatorDelegate?
     
@@ -82,6 +85,18 @@ class LaunchDetailViewController: UIViewController {
         rocketNameLabel.text = "Rocket name: \(viewModel.rocketName)"
         rocketTypeLabel.text = "Rocket type: \(viewModel.rocketType)"
         descriptionLabel.text = viewModel.details
+        
+        youtubeCircleButton.layer.cornerRadius = youtubeCircleButton.bounds.height / 2
+        youtubeCircleButton.clipsToBounds = true
+
+        safariCircleButton.layer.cornerRadius = safariCircleButton.bounds.height / 2
+        safariCircleButton.clipsToBounds = true
+        let playIcon = UIImage(systemName: "play.fill")
+        let infoIcon = UIImage(systemName: "info.circle.fill")
+        youtubeCircleButton.setImage(playIcon, for: .normal)
+        safariCircleButton.setImage(infoIcon, for: .normal)
+        youtubeCircleButton.tintColor = .white
+        safariCircleButton.tintColor = .white
     }
     
     @IBAction func pageControlValueChanged(_ sender: UIPageControl) {
