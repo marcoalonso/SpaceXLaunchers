@@ -47,7 +47,8 @@ final class AppCoordinator: Coordinator {
     }
 
     private func showLaunchDetail(for launch: LaunchModel) {
-        // TODO: - Navigate to detail
-        print("Navegar a detalle de: \(launch.missionName)")
+        let detailViewModel = LaunchDetailViewModel(launch: launch)
+        let detailVC = LaunchDetailViewController(viewModel: detailViewModel)
+        navigationController.pushViewController(detailVC, animated: true)
     }
 }
