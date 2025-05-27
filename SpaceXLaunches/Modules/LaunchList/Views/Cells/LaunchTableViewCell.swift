@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class LaunchTableViewCell: UITableViewCell {
     
@@ -33,20 +34,34 @@ class LaunchTableViewCell: UITableViewCell {
         containerView.layer.masksToBounds = false
         contentView.backgroundColor = .clear
     }
-
+    
+    /// Configures the cell with launch data.
+    ///
+    /// Sets the mission name, site name, launch date, and loads the mission patch image using Kingfisher.
+    /// Applies downsampling and corner radius processing for better performance and appearance.
+    ///
+    /// - Parameter launch: A `LaunchModel` instance containing the data to display.
     func configure(with launch: LaunchModel) {
         missionNameLabel.text = launch.missionName
+        missionDateLabel.textColor = .textPrimary
         siteNameLabel.text = launch.launchSite.siteName
+        siteNameLabel.textColor = .textSecondary
         missionDateLabel.text = launch.formattedDate
+        missionDateLabel.textColor = .textSecondary
         
         if let urlString = launch.links.missionPatch, let url = URL(string: urlString) {
-            URLSession.shared.dataTask(with: url) { data, _, _ in
-                if let data = data {
-                    DispatchQueue.main.async {
-                        self.missionImageView.image = UIImage(data: data)
-                    }
-                }
-            }.resume()
+            let processor = DownsamplingImageProcessor(size: missionImageView.bounds.size)
+            |> RoundCornerImageProcessor(cornerRadius: 8)
+            
+            missionImageView.kf.indicatorType = .activity
+            missionImageView.kf.setImage(
+                with: url,
+                options: [
+                    .processor(processor),
+                    .scaleFactor(UIScreen.main.scale),
+                    .transition(.fade(0.2)),
+                    .cacheOriginalImage
+                ])
         } else {
             missionImageView.image = UIImage(named: "placeholder_rocket")
         }
