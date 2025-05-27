@@ -16,7 +16,7 @@ final class LaunchDetailViewModel {
     let rocketType: String
     let details: String?
     let flickrImages: [String]
-    let youtubeURL: URL?
+    let youtubeId: String?
     let infoURL: URL?
 
     init(launch: LaunchModel) {
@@ -27,7 +27,7 @@ final class LaunchDetailViewModel {
         self.rocketType = launch.rocket.rocketType
         self.details = launch.details
         self.flickrImages = launch.links.flickrImages
-        self.youtubeURL = URL(string: launch.links.videoLink ?? "")
+        self.youtubeId = launch.links.youtubeId
         self.infoURL = URL(string: launch.links.wikipedia ?? launch.links.articleLink ?? "")
     }
 }
