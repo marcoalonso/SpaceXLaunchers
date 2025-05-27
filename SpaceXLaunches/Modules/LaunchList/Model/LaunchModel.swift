@@ -62,3 +62,20 @@ struct LaunchModel: Decodable {
         }
     }
 }
+
+extension LaunchModel {
+    var formattedDate: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+
+        guard let date = formatter.date(from: launchDateUTC) else { return "N/A" }
+
+        let displayFormatter = DateFormatter()
+        displayFormatter.dateStyle = .full
+        displayFormatter.timeStyle = .none
+        displayFormatter.locale = Locale(identifier: "es_MX")
+        return displayFormatter.string(from: date)
+    }
+}
