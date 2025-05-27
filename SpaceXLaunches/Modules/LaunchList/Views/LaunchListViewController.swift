@@ -10,6 +10,8 @@ import Combine
 
 class LaunchListViewController: UIViewController {
     
+    @IBOutlet weak var emptyStateLabel: UILabel!
+    @IBOutlet weak var emptyStateImageView: UIImageView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var launchesTableView: UITableView!
@@ -36,6 +38,8 @@ class LaunchListViewController: UIViewController {
     }
     
     private func setupUI() {
+        emptyStateImageView.isHidden = true
+        emptyStateLabel.isHidden = true
         title = "Space X 🚀"
         view.backgroundColor = UIColor.systemGroupedBackground
         launchesTableView.backgroundColor = view.backgroundColor
@@ -54,8 +58,24 @@ class LaunchListViewController: UIViewController {
     private func bindViewModel() {
         viewModel.$launches
             .receive(on: RunLoop.main)
-            .sink { [weak self] _ in
-                self?.launchesTableView.reloadData()
+            .sink { [weak self] launches in
+                guard let self = self else { return }
+                
+                let showEmptyImage = launches.isEmpty
+                UIView.transition(with: self.emptyStateImageView,
+                                  duration: 0.3,
+                                  options: .transitionCrossDissolve,
+                                  animations: {
+                    self.emptyStateImageView.isHidden = !showEmptyImage
+                    self.emptyStateLabel.isHidden = !showEmptyImage
+                })
+                
+                UIView.transition(with: self.launchesTableView,
+                                  duration: 0.25,
+                                  options: .transitionCrossDissolve,
+                                  animations: {
+                    self.launchesTableView.reloadData()
+                })
             }
             .store(in: &cancellables)
         

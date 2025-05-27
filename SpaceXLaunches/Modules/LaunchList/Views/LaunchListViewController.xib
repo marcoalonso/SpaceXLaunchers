@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LaunchListViewController" customModule="SpaceXLaunches" customModuleProvider="target">
             <connections>
+                <outlet property="emptyStateImageView" destination="EM5-ES-43W" id="hoi-GS-gy6"/>
+                <outlet property="emptyStateLabel" destination="kFg-3U-vqO" id="2fo-XO-Hxl"/>
                 <outlet property="launchesTableView" destination="9Ps-YA-XlT" id="7d3-mL-F2l"/>
                 <outlet property="searchBar" destination="03l-gb-ODw" id="cVg-Kw-XqN"/>
                 <outlet property="titleLabel" destination="eLV-qx-IQL" id="bcA-4k-hfo"/>
@@ -41,17 +43,36 @@
                         <outlet property="delegate" destination="-1" id="kQ3-2D-ylB"/>
                     </connections>
                 </searchBar>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noresult" translatesAutoresizingMaskIntoConstraints="NO" id="EM5-ES-43W">
+                    <rect key="frame" x="20" y="193" width="353" height="250"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="250" id="Crh-Xe-sR4"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Results Found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFg-3U-vqO">
+                    <rect key="frame" x="20" y="143" width="353" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <color key="textColor" systemColor="systemGrayColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="03l-gb-ODw" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="5YN-0y-Wk5"/>
                 <constraint firstItem="9Ps-YA-XlT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="9EP-p1-jaL"/>
+                <constraint firstItem="kFg-3U-vqO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="C3A-Wj-lrp"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9Ps-YA-XlT" secondAttribute="trailing" id="CHj-GU-Gtg"/>
+                <constraint firstItem="EM5-ES-43W" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="CJM-Rg-1Lg"/>
                 <constraint firstItem="eLV-qx-IQL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="DDS-6L-EUT"/>
                 <constraint firstItem="03l-gb-ODw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HZJ-2F-Vma"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EM5-ES-43W" secondAttribute="trailing" constant="20" id="JOb-2h-E4K"/>
+                <constraint firstItem="kFg-3U-vqO" firstAttribute="top" secondItem="03l-gb-ODw" secondAttribute="bottom" constant="20" id="Jlm-aN-lpi"/>
                 <constraint firstItem="9Ps-YA-XlT" firstAttribute="top" secondItem="03l-gb-ODw" secondAttribute="bottom" constant="5" id="QpE-BF-kqZ"/>
+                <constraint firstItem="EM5-ES-43W" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="WQU-DQ-2fA"/>
+                <constraint firstItem="EM5-ES-43W" firstAttribute="top" secondItem="kFg-3U-vqO" secondAttribute="bottom" constant="20" id="apG-CB-XqU"/>
                 <constraint firstItem="03l-gb-ODw" firstAttribute="top" secondItem="eLV-qx-IQL" secondAttribute="bottom" constant="1" id="fwc-M7-tvn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kFg-3U-vqO" secondAttribute="trailing" constant="20" id="hWs-52-k4Y"/>
                 <constraint firstItem="9Ps-YA-XlT" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="10" id="ldw-1n-fxG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eLV-qx-IQL" secondAttribute="trailing" constant="20" id="sL6-St-dau"/>
                 <constraint firstItem="eLV-qx-IQL" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-5" id="u4I-zI-gNx"/>
@@ -60,8 +81,12 @@
         </view>
     </objects>
     <resources>
+        <image name="noresult" width="450" height="450"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
