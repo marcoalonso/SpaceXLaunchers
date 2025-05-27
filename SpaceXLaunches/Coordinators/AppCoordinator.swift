@@ -8,6 +8,10 @@
 import Foundation
 import UIKit
 
+protocol LaunchDetailCoordinatorDelegate: AnyObject {
+    func didTapYouTubeVideo(videoId: String)
+}
+
 protocol Coordinator {
     var navigationController: UINavigationController { get set }
     func start()
@@ -47,8 +51,20 @@ final class AppCoordinator: Coordinator {
     }
 
     private func showLaunchDetail(for launch: LaunchModel) {
-        let detailViewModel = LaunchDetailViewModel(launch: launch)
-        let detailVC = LaunchDetailViewController(viewModel: detailViewModel)
+        let detailVM = LaunchDetailViewModel(launch: launch)
+        let detailVC = LaunchDetailViewController(viewModel: detailVM)
+        detailVC.coordinatorDelegate = self
         navigationController.pushViewController(detailVC, animated: true)
+    }
+    
+    func showYouTubeVideo(with videoId: String) {
+        let youtubeVC = YouTubePlayerViewController(videoId: videoId)
+        navigationController.pushViewController(youtubeVC, animated: true)
+    }
+}
+
+extension AppCoordinator: LaunchDetailCoordinatorDelegate {
+    func didTapYouTubeVideo(videoId: String) {
+        showYouTubeVideo(with: videoId)
     }
 }
