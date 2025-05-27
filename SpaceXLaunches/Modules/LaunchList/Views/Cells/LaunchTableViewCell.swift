@@ -49,7 +49,9 @@ class LaunchTableViewCell: UITableViewCell {
         missionDateLabel.text = launch.formattedDate
         missionDateLabel.textColor = .textSecondary
         
-        if let urlString = launch.links.missionPatch, let url = URL(string: urlString) {
+        let imageURLString = launch.links.missionPatch ?? launch.links.flickrImages.first
+
+        if let urlString = imageURLString, let url = URL(string: urlString) {
             let processor = DownsamplingImageProcessor(size: missionImageView.bounds.size)
             |> RoundCornerImageProcessor(cornerRadius: 8)
             

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23605" systemVersion="24D60" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="LaunchEntity" representedClassName="LaunchEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="articleLink" optional="YES" attributeType="String"/>
+        <attribute name="details" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="imageURLs" optional="YES" attributeType="String"/>
+        <attribute name="launchDateUTC" optional="YES" attributeType="String"/>
+        <attribute name="missionName" optional="YES" attributeType="String"/>
+        <attribute name="missionPatch" optional="YES" attributeType="String"/>
+        <attribute name="rocketName" optional="YES" attributeType="String"/>
+        <attribute name="rocketType" optional="YES" attributeType="String"/>
+        <attribute name="siteName" optional="YES" attributeType="String"/>
+        <attribute name="wikipediaLink" optional="YES" attributeType="String"/>
+        <attribute name="youtubeId" optional="YES" attributeType="String"/>
+    </entity>
+</model>

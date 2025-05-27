@@ -105,6 +105,10 @@ class LaunchDetailViewController: UIViewController {
         safariCircleButton.applyCircleStyle(iconName: "info.circle.fill")
         view.backgroundColor = UIColor.systemGroupedBackground
         collectionView.backgroundColor = view.backgroundColor
+        
+        self.images = viewModel.flickrImages
+        self.pageControl.numberOfPages = images.count
+        collectionView.reloadData()
     }
     
     @IBAction func pageControlValueChanged(_ sender: UIPageControl) {

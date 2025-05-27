@@ -15,6 +15,7 @@ final class LaunchListViewModel {
     @Published private(set) var errorMessage: String?
     
     var onLaunchSelected: ((LaunchModel) -> Void)?
+    let coreDataManager = LaunchDataManager.shared
 
     private let service: LaunchesServiceProtocol
     private var cancellables = Set<AnyCancellable>()
@@ -27,6 +28,15 @@ final class LaunchListViewModel {
         isLoading = true
         errorMessage = nil
 
+        let localLaunches = coreDataManager.fetchLaunches()
+        
+        if !localLaunches.isEmpty {
+            self.launches = localLaunches
+            isLoading = false
+            print("Loaded from Core Data")
+            return
+        }
+
         service.fetchLaunches()
             .sink { [weak self] completion in
                 self?.isLoading = false
@@ -35,6 +45,7 @@ final class LaunchListViewModel {
                 }
             } receiveValue: { [weak self] launches in
                 self?.launches = launches
+                self?.coreDataManager.saveLaunches(launches)
             }
             .store(in: &cancellables)
     }
