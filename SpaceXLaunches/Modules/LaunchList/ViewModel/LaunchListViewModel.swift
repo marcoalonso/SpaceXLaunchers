@@ -14,6 +14,8 @@ final class LaunchListViewModel {
     @Published private(set) var isLoading = false
     @Published private(set) var errorMessage: String?
     
+    private var allLaunches: [LaunchModel] = []
+    
     var onLaunchSelected: ((LaunchModel) -> Void)?
     let coreDataManager = LaunchDataManager.shared
 
@@ -31,9 +33,9 @@ final class LaunchListViewModel {
         let localLaunches = coreDataManager.fetchLaunches()
         
         if !localLaunches.isEmpty {
+            self.allLaunches = localLaunches
             self.launches = localLaunches
             isLoading = false
-            print("Loaded from Core Data")
             return
         }
 
@@ -44,6 +46,7 @@ final class LaunchListViewModel {
                     self?.errorMessage = error.localizedDescription
                 }
             } receiveValue: { [weak self] launches in
+                self?.allLaunches = launches
                 self?.launches = launches
                 self?.coreDataManager.saveLaunches(launches)
             }
@@ -52,5 +55,19 @@ final class LaunchListViewModel {
     
     func selectLaunch(_ launch: LaunchModel) {
         onLaunchSelected?(launch)
+    }
+
+    func filterLaunches(query: String) {
+        let trimmed = query.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        guard !trimmed.isEmpty else {
+            launches = allLaunches
+            return
+        }
+        
+        launches = allLaunches.filter {
+            $0.missionName.localizedCaseInsensitiveContains(trimmed) ||
+            $0.launchSite.siteName.localizedCaseInsensitiveContains(trimmed)
+        }
     }
 }
