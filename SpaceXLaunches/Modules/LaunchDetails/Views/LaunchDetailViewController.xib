@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LaunchDetailViewController" customModule="SpaceXLaunches" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="rZN-3C-bd5" id="lje-3G-2he"/>
+                <outlet property="dateLabel" destination="C0u-O1-y0v" id="mKS-pU-fPF"/>
+                <outlet property="descriptionLabel" destination="a0R-8Z-pcw" id="Dqi-Hp-Kc8"/>
+                <outlet property="pageControl" destination="LTt-RI-2L6" id="N9N-Yd-0NG"/>
+                <outlet property="rocketNameLabel" destination="RmO-aY-YsI" id="RTs-bR-O7m"/>
+                <outlet property="rocketTypeLabel" destination="kLO-nA-dY1" id="6Ub-My-5F8"/>
+                <outlet property="siteLabel" destination="H2Q-0x-ggx" id="x6F-dK-J5h"/>
+                <outlet property="titleLabel" destination="bOD-mM-UM3" id="FR3-gv-iCh"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thaicom 6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOD-mM-UM3">
+                    <rect key="frame" x="20" y="47" width="350" height="20.333333333333329"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pSt-Gf-LI9" userLabel="Stack View Details">
+                    <rect key="frame" x="10" y="87.333333333333314" width="370" height="146"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zOf-jK-L1B">
+                            <rect key="frame" x="0.0" y="0.0" width="370" height="24"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <color key="textColor" systemColor="systemIndigoColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date: Jan 6, 12:06 p.m." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0u-O1-y0v">
+                            <rect key="frame" x="0.0" y="32" width="370" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Site: Cape Canaveral Air Force Statios Space Launch Complex 40" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2Q-0x-ggx">
+                            <rect key="frame" x="0.0" y="58.000000000000014" width="370" height="36"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rocket name: Falcon 9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RmO-aY-YsI">
+                            <rect key="frame" x="0.0" y="102.00000000000001" width="370" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rocket type: v1.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLO-nA-dY1">
+                            <rect key="frame" x="0.0" y="128" width="370" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WUD-w5-rX2">
+                    <rect key="frame" x="10" y="243.33333333333337" width="370" height="185"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="rZN-3C-bd5">
+                            <rect key="frame" x="0.0" y="0.0" width="370" height="154.33333333333334"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6np-x8-fdo">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="LTt-RI-2L6">
+                            <rect key="frame" x="0.0" y="159.33333333333334" width="370" height="25.666666666666657"/>
+                            <color key="pageIndicatorTintColor" systemColor="systemGray3Color"/>
+                            <color key="currentPageIndicatorTintColor" systemColor="systemIndigoColor"/>
+                        </pageControl>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="185" id="nOZ-OG-4Kg"/>
+                    </constraints>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0R-8Z-pcw">
+                    <rect key="frame" x="10" y="438.33333333333331" width="370" height="99.999999999999943"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="HQJ-z0-4T0"/>
+                    </constraints>
+                    <string key="text">Ratsat was carried to orbit on the first successful orbital launch of any privately funded and developed, liquid-propelled carrier rocket, the SpaceX Falcon 9</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="thJ-Y1-b2G" userLabel="Stack View Buttons">
+                    <rect key="frame" x="20" y="558.33333333333337" width="350" height="108"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sv9-iQ-8Pi">
+                            <rect key="frame" x="0.0" y="0.0" width="350" height="50"/>
+                            <color key="backgroundColor" systemColor="systemRedColor"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="YT Video"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <integer key="value" value="25"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGR-7m-3nU">
+                            <rect key="frame" x="0.0" y="58" width="350" height="50"/>
+                            <color key="backgroundColor" red="0.0" green="0.18501654270000001" blue="0.33511510490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="Xgh-N1-oRc"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Launch Info"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <integer key="value" value="25"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="pSt-Gf-LI9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="0hN-pc-nNc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WUD-w5-rX2" secondAttribute="trailing" constant="10" id="1tp-ma-yTk"/>
+                <constraint firstItem="WUD-w5-rX2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="49e-du-kxl"/>
+                <constraint firstItem="bOD-mM-UM3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="7ta-eg-lMr"/>
+                <constraint firstAttribute="trailing" secondItem="pSt-Gf-LI9" secondAttribute="trailing" constant="10" id="C9C-du-bca"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bOD-mM-UM3" secondAttribute="trailing" constant="20" id="ERN-Dy-jlD"/>
+                <constraint firstItem="bOD-mM-UM3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="I6L-Du-GZm"/>
+                <constraint firstItem="thJ-Y1-b2G" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="NhK-tL-318"/>
+                <constraint firstItem="a0R-8Z-pcw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="OWe-EF-koG"/>
+                <constraint firstItem="WUD-w5-rX2" firstAttribute="top" secondItem="pSt-Gf-LI9" secondAttribute="bottom" constant="10" id="Z0L-nv-4VB"/>
+                <constraint firstItem="thJ-Y1-b2G" firstAttribute="top" secondItem="a0R-8Z-pcw" secondAttribute="bottom" constant="20" id="fir-ck-vgH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="a0R-8Z-pcw" secondAttribute="trailing" constant="10" id="iaB-nw-Giq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="thJ-Y1-b2G" secondAttribute="trailing" constant="20" id="mSf-T8-Q6m"/>
+                <constraint firstItem="a0R-8Z-pcw" firstAttribute="top" secondItem="WUD-w5-rX2" secondAttribute="bottom" constant="10" id="nQS-WL-bxa"/>
+                <constraint firstItem="pSt-Gf-LI9" firstAttribute="top" secondItem="bOD-mM-UM3" secondAttribute="bottom" constant="20" id="z5T-ew-QUl"/>
+            </constraints>
+            <point key="canvasLocation" x="131.34328358208955" y="-11.670480549199084"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
