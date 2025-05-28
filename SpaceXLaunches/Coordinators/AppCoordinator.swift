@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
 import SafariServices
 
 protocol LaunchDetailCoordinatorDelegate: AnyObject {
@@ -32,12 +33,28 @@ final class AppCoordinator: Coordinator {
     func start() {
         let splashVC = SplashViewController()
         splashVC.onAnimationCompleted = { [weak self] in
-            self?.showLaunchList()
+            self?.checkUserSession()
         }
 
         navigationController.setViewControllers([splashVC], animated: false)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
+    }
+
+    private func checkUserSession() {
+        if Auth.auth().currentUser != nil {
+            showLaunchList()
+        } else {
+            showLogin()
+        }
+    }
+
+    private func showLogin() {
+        let loginVC = LoginViewController()
+        loginVC.onLoginSuccess = { [weak self] in
+            self?.showLaunchList()
+        }
+        navigationController.setViewControllers([loginVC], animated: true)
     }
 
     private func showLaunchList() {
