@@ -46,15 +46,14 @@ Una aplicación iOS desarrollada con UIKit que muestra los lanzamientos de Space
 🌱 Estructura de Ramas (Branching Strategy)
 
 Este proyecto fue desarrollado utilizando una estrategia basada en ramas feature y una rama principal de desarrollo:
-
-•	main → rama principal para producción (release final)
-•	development → rama de integración donde se prueban y combinan funcionalidades
-•	feature/launch-list → lista de lanzamientos en UITableView
-•	feature/launch-detail → vista detalle con imágenes y enlaces
-•	feature/coredata-storage → persistencia local con Core Data
-•	feature/searchbar → búsqueda con UISearchBar
-•	feature/splash-screen → implementación del splash
-•	feature/coordinator-pattern → navegación desacoplada usando patrón Coordinator
+- main → rama principal para producción (release final)
+- development → rama de integración donde se prueban y combinan funcionalidades
+- feature/launch-list → lista de lanzamientos en UITableView
+- feature/launch-detail → vista detalle con imágenes y enlaces
+- feature/coredata-storage → persistencia local con Core Data
+- feature/searchbar → búsqueda con UISearchBar
+- feature/splash-screen → implementación del splash
+- feature/coordinator-pattern → navegación desacoplada usando patrón Coordinator
 
 Cada nueva funcionalidad se desarrolló en su propia rama y luego fue mergeada en development para mantener una integración controlada y ordenada.
 
@@ -64,3 +63,34 @@ Cada nueva funcionalidad se desarrolló en su propia rama y luego fue mergeada e
 iOS Developer | Swift | SwiftUI | UIKit  
 
 ---
+
+![image](https://github.com/user-attachments/assets/3db8f5ec-f6f2-4222-bfdd-ed9d26953e9e)
+
+
+
+![image](https://github.com/user-attachments/assets/3ac60ca7-7018-4dbd-a118-4225c013278d)
+
+
+
+![image](https://github.com/user-attachments/assets/a98a77ac-5c0b-4801-bdef-ecdcf3fe02a6)
+
+
+
+![image](https://github.com/user-attachments/assets/651303d0-a81a-4eea-ac33-245089509cfe)
+
+
+
+![image](https://github.com/user-attachments/assets/94a34763-afe7-4c38-a88d-b88c06df9e72)
+
+
+![image](https://github.com/user-attachments/assets/807d8b64-0af4-4941-8bf6-de37eae1cc60)
+
+
+
+![image](https://github.com/user-attachments/assets/6bc41bdc-d60b-4672-8009-c2bfd2514039)
+
+
+
+![image](https://github.com/user-attachments/assets/2665e139-937b-45bc-bdb7-cf0e8c8bf87d)
+
+
