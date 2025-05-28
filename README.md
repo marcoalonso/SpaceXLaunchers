@@ -46,20 +46,21 @@ Una aplicación iOS desarrollada con UIKit que muestra los lanzamientos de Space
 🌱 Estructura de Ramas (Branching Strategy)
 
 Este proyecto fue desarrollado utilizando una estrategia basada en ramas feature y una rama principal de desarrollo:
-	•	main → rama principal para producción (release final)
-	•	development → rama de integración donde se prueban y combinan funcionalidades
-	•	feature/launch-list → lista de lanzamientos en UITableView
-	•	feature/launch-detail → vista detalle con imágenes y enlaces
-	•	feature/coredata-storage → persistencia local con Core Data
-	•	feature/searchbar → búsqueda con UISearchBar
-	•	feature/splash-screen → implementación del splash
-	•	feature/coordinator-pattern → navegación desacoplada usando patrón Coordinator
+
+•	main → rama principal para producción (release final)
+•	development → rama de integración donde se prueban y combinan funcionalidades
+•	feature/launch-list → lista de lanzamientos en UITableView
+•	feature/launch-detail → vista detalle con imágenes y enlaces
+•	feature/coredata-storage → persistencia local con Core Data
+•	feature/searchbar → búsqueda con UISearchBar
+•	feature/splash-screen → implementación del splash
+•	feature/coordinator-pattern → navegación desacoplada usando patrón Coordinator
 
 Cada nueva funcionalidad se desarrolló en su propia rama y luego fue mergeada en development para mantener una integración controlada y ordenada.
 
 ## 🧑‍💻 Desarrollador
 
-**Marco Alonso**  
+**Marco Alonso Rodriguez**  
 iOS Developer | Swift | SwiftUI | UIKit  
 
 ---
