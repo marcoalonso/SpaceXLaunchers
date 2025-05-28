@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import FirebaseAuth
 
 class LaunchListViewController: UIViewController {
     
@@ -35,6 +36,7 @@ class LaunchListViewController: UIViewController {
         bindViewModel()
         viewModel.fetchLaunches()
         setupUI()
+        setupLogoutButton()
     }
     
     private func setupUI() {
@@ -45,6 +47,27 @@ class LaunchListViewController: UIViewController {
         launchesTableView.backgroundColor = view.backgroundColor
         searchBar.delegate = self
         searchBar.placeholder = "Search by mission or site"
+    }
+    
+    private func setupLogoutButton() {
+        let logoutImage = UIImage(systemName: "arrow.backward.square")
+        let logoutButton = UIBarButtonItem(image: logoutImage,
+                                           style: .plain,
+                                           target: self,
+                                           action: #selector(logoutTapped))
+        logoutButton.tintColor = .black
+        navigationItem.rightBarButtonItem = logoutButton
+    }
+    
+    @objc private func logoutTapped() {
+        do {
+            try Auth.auth().signOut()
+            
+            NotificationCenter.default.post(name: .userDidLogout, object: nil)
+            
+        } catch {
+            showError("Failed to sign out: \(error.localizedDescription)")
+        }
     }
     
     private func setupTableView() {

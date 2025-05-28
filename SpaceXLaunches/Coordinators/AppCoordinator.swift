@@ -28,6 +28,14 @@ final class AppCoordinator: Coordinator {
     init(window: UIWindow) {
         self.window = window
         self.navigationController = UINavigationController()
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(userDidLogout),
+                                               name: .userDidLogout,
+                                               object: nil)
+    }
+    
+    @objc private func userDidLogout() {
+        showLogin()
     }
 
     func start() {
@@ -50,11 +58,31 @@ final class AppCoordinator: Coordinator {
     }
 
     private func showLogin() {
-        let loginVC = LoginViewController()
-        loginVC.onLoginSuccess = { [weak self] in
+        let loginVM = LoginViewModel()
+        loginVM.onLoginSuccess = { [weak self] in
             self?.showLaunchList()
         }
+
+        loginVM.onRegisterTap = { [weak self] in
+            self?.showRegister()
+        }
+
+        let loginVC = LoginViewController(viewModel: loginVM)
         navigationController.setViewControllers([loginVC], animated: true)
+    }
+
+    private func showRegister() {
+        let registerVM = RegisterViewModel()
+        registerVM.onRegisterSuccess = { [weak self] in
+            self?.showLaunchList()
+        }
+
+        registerVM.onGoBackToLogin = { [weak self] in
+            self?.navigationController.popViewController(animated: true)
+        }
+
+        let registerVC = RegisterViewController(viewModel: registerVM)
+        navigationController.pushViewController(registerVC, animated: true)
     }
 
     private func showLaunchList() {
@@ -96,4 +124,8 @@ extension AppCoordinator: LaunchDetailCoordinatorDelegate {
         let safariVC = SFSafariViewController(url: url)
         navigationController.present(safariVC, animated: true)
     }
+}
+
+extension Notification.Name {
+    static let userDidLogout = Notification.Name("userDidLogout")
 }
