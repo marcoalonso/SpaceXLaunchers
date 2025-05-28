@@ -58,7 +58,7 @@ Este proyecto fue desarrollado utilizando una estrategia basada en ramas especí
 	•	feature/searchbar → implementación de la búsqueda con UISearchBar
 	•	feature/splash-screen → pantalla de presentación (splash screen)
 	•	feature/coordinator-pattern → navegación desacoplada usando el patrón Coordinator
- •	feature/firebase-login → Login y registro de usuarios con Firebase
+ 	•	feature/firebase-login → Login y registro de usuarios con Firebase
  
 
 Cada nueva funcionalidad se desarrolló en su propia rama y luego fue integrada en development para mantener un flujo de trabajo limpio y controlado.
@@ -71,6 +71,9 @@ Marco Alonso Rodríguez
 Desarrollador iOS | Swift | SwiftUI | UIKit
 
 --- Algunas capturas de pantalla de la aplicación
+
+
+
 ![image](https://github.com/user-attachments/assets/fc4439c6-280e-4805-8ff9-c29a3a2e2485)
 
 
