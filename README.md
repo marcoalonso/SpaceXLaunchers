@@ -1,76 +1,76 @@
-# 🚀 SpaceX Launches App
+🚀 SpaceX Launches App
 
-Una aplicación iOS desarrollada con UIKit que muestra los lanzamientos de SpaceX, utilizando datos en tiempo real desde la API pública. Permite visualizar detalles, ver videos en YouTube, realizar búsquedas filtradas, y funciona incluso sin conexión gracias a la persistencia con Core Data.
+Una aplicación iOS desarrollada con UIKit que muestra los lanzamientos de SpaceX, utilizando datos en tiempo real desde la API pública. Permite visualizar detalles, ver videos en YouTube, realizar búsquedas filtradas, e incluso funciona sin conexión gracias a la persistencia local con Core Data.
 
----
+⸻
 
-## 🛠 Tecnologías utilizadas
+🛠 Tecnologías utilizadas
+	•	UIKit
+	•	Arquitectura MVVM
+	•	Core Data para persistencia local
+	•	Combine para enlaces reactivos entre la lógica y la interfaz
+	•	Kingfisher para carga y caché de imágenes
+	•	YTPlayerView para la integración de videos de YouTube
+	•	Auto Layout adaptable a diferentes tamaños de pantalla
+	•	Uso combinado de XIBs y Storyboards
 
-- **UIKit**
-- **MVVM Architecture**
-- **Core Data** para persistencia local
-- **Combine** para binding reactivo
-- **Kingfisher** para carga y cache de imágenes
-- **YTPlayerView** para integración de YouTube
-- **Auto Layout** responsivo (soporta diferentes tamaños de pantalla)
-- **XIBs y Storyboards** combinados
+⸻
 
----
+✨ Características principales
 
-## ✨ Características principales
+🔍 Lista de lanzamientos
+	•	Lista de lanzamientos usando UITableView
+	•	Vista de detalle con información completa de cada lanzamiento
+	•	Soporte sin conexión: los lanzamientos se guardan en Core Data
 
-### 🔍 Launches
+🎥 Integración con YouTube
+	•	Cada lanzamiento puede mostrar su video de lanzamiento desde un reproductor integrado
 
-- Lista de lanzamientos usando **table view**
-- Vista de detalle con información completa de cada lanzamiento
-- Soporte offline: los lanzamientos se guardan en Core Data
+🔐 Autenticación con Firebase
+	•	Inicio de sesión mediante correo electrónico y contraseña
+	•	Registro de nuevos usuarios
+	•	Verificación automática del usuario autenticado
+	•	Cierre de sesión con retorno a la pantalla de login
+	•	Puedes iniciar sesión con:
+	•	Correo: user@user.com
+	•	Contraseña: 123456
 
-### 🎥 YouTube Integration
+🔎 Búsqueda avanzada
+	•	Barra de búsqueda integrada para filtrar lanzamientos por:
+	•	Nombre de la misión
+	•	Lugar del lanzamiento
 
-- Cada lanzamiento puede mostrar el video del lanzamiento en un reproductor integrado
+📱 Interfaz adaptativa
+	•	Animaciones suaves al hacer scroll o aplicar filtros
+	•	Diseño adaptable con Auto Layout para múltiples dispositivos
+	•	Mensaje e imagen de “Sin resultados” cuando no hay coincidencias
 
-- ### 🔐 Firebase Authentication
+⸻
 
-- Inicio de sesión con **email y contraseña**
-- Registro de nuevos usuarios
-- Verificación del usuario logueado
-- Logout con retorno a la pantalla de login
-- You can login with: email: user@user.com  password: 123456
+🌱 Estructura de ramas
 
-### 🔎 Búsqueda avanzada
+Este proyecto fue desarrollado utilizando una estrategia basada en ramas específicas para funcionalidades, más una rama principal de desarrollo:
+	•	main → rama principal para producción (versión final)
+	•	development → rama de integración donde se prueban y combinan las funcionalidades
+	•	feature/launch-list → desarrollo de la lista de lanzamientos con UITableView
+	•	feature/launch-detail → vista detallada con imágenes y enlaces
+	•	feature/coredata-storage → persistencia local con Core Data
+	•	feature/searchbar → implementación de la búsqueda con UISearchBar
+	•	feature/splash-screen → pantalla de presentación (splash screen)
+	•	feature/coordinator-pattern → navegación desacoplada usando el patrón Coordinator
+ •	feature/firebase-login → Login y registro de usuarios con Firebase
+ 
 
-- SearchBar integrada para filtrar lanzamientos por:
-  - Nombre de la misión
-  - Sitio de lanzamiento
+Cada nueva funcionalidad se desarrolló en su propia rama y luego fue integrada en development para mantener un flujo de trabajo limpio y controlado.
 
-### 📱 UI Adaptativa
+⸻
 
-- Animaciones suaves al hacer scroll o filtrar resultados
-- Diseño con **Auto Layout** responsivo a tamaño de pantalla
-- Mensaje e imagen de **"Sin resultados"** cuando no hay coincidencias
+👨‍💻 Desarrollador
 
----
+Marco Alonso Rodríguez
+Desarrollador iOS | Swift | SwiftUI | UIKit
 
-🌱 Estructura de Ramas (Branching Strategy)
-
-Este proyecto fue desarrollado utilizando una estrategia basada en ramas feature y una rama principal de desarrollo:
-- main → rama principal para producción (release final)
-- development → rama de integración donde se prueban y combinan funcionalidades
-- feature/launch-list → lista de lanzamientos en UITableView
-- feature/launch-detail → vista detalle con imágenes y enlaces
-- feature/coredata-storage → persistencia local con Core Data
-- feature/searchbar → búsqueda con UISearchBar
-- feature/splash-screen → implementación del splash
-- feature/coordinator-pattern → navegación desacoplada usando patrón Coordinator
-
-Cada nueva funcionalidad se desarrolló en su propia rama y luego fue mergeada en development para mantener una integración controlada y ordenada.
-
-## 🧑‍💻 Desarrollador
-
-**Marco Alonso Rodriguez**  
-iOS Developer | Swift | SwiftUI | UIKit  
-
----
+--- Algunas capturas de pantalla de la aplicación
 ![image](https://github.com/user-attachments/assets/fc4439c6-280e-4805-8ff9-c29a3a2e2485)
 
 
