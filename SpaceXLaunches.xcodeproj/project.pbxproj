@@ -11,6 +11,9 @@
 		6CCC05582DE545190093179C /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 6CCC05572DE545190093179C /* Lottie */; };
 		6CD2E0F32DE5649A00506B93 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 6CD2E0F22DE5649A00506B93 /* Alamofire */; };
 		6CD2E16B2DE576A600506B93 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 6CD2E16A2DE576A600506B93 /* Kingfisher */; };
+		6CDA56942DE74BAF0048A582 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 6CDA56932DE74BAF0048A582 /* FirebaseAnalytics */; };
+		6CDA56962DE74BAF0048A582 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6CDA56952DE74BAF0048A582 /* FirebaseAuth */; };
+		6CDA56982DE74BAF0048A582 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 6CDA56972DE74BAF0048A582 /* FirebaseCore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,8 +60,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CD2E16B2DE576A600506B93 /* Kingfisher in Frameworks */,
+				6CDA56962DE74BAF0048A582 /* FirebaseAuth in Frameworks */,
 				6CCC05582DE545190093179C /* Lottie in Frameworks */,
 				6CD2E0F32DE5649A00506B93 /* Alamofire in Frameworks */,
+				6CDA56982DE74BAF0048A582 /* FirebaseCore in Frameworks */,
+				6CDA56942DE74BAF0048A582 /* FirebaseAnalytics in Frameworks */,
 				6C92DE832DE5F63900E923C2 /* YouTubeiOSPlayerHelper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,6 +113,9 @@
 				6CD2E0F22DE5649A00506B93 /* Alamofire */,
 				6CD2E16A2DE576A600506B93 /* Kingfisher */,
 				6C92DE822DE5F63900E923C2 /* YouTubeiOSPlayerHelper */,
+				6CDA56932DE74BAF0048A582 /* FirebaseAnalytics */,
+				6CDA56952DE74BAF0048A582 /* FirebaseAuth */,
+				6CDA56972DE74BAF0048A582 /* FirebaseCore */,
 			);
 			productName = SpaceXLaunches;
 			productReference = 6CCC05312DE5420C0093179C /* SpaceXLaunches.app */;
@@ -141,6 +150,7 @@
 				6CD2E0F12DE5649A00506B93 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				6CD2E1692DE576A600506B93 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				6C92DE812DE5F63900E923C2 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */,
+				6CDA56922DE74BAF0048A582 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 6CCC05322DE5420C0093179C /* Products */;
@@ -404,6 +414,14 @@
 				minimumVersion = 8.3.2;
 			};
 		};
+		6CDA56922DE74BAF0048A582 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.13.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -426,6 +444,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6CD2E1692DE576A600506B93 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		6CDA56932DE74BAF0048A582 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6CDA56922DE74BAF0048A582 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		6CDA56952DE74BAF0048A582 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6CDA56922DE74BAF0048A582 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		6CDA56972DE74BAF0048A582 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6CDA56922DE74BAF0048A582 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
