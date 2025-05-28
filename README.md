@@ -82,7 +82,7 @@ iOS Developer | Swift | SwiftUI | UIKit
 ![image](https://github.com/user-attachments/assets/dc4e9606-22b3-4ccd-bcb6-5d9a117e58b4)
 
 
-![image](https://github.com/user-attachments/assets/c51eb32b-4a31-4ec7-a424-97352465a07b)
+![image](https://github.com/user-attachments/assets/34ff3c2e-8634-4368-9bc7-f0f989030e16)
 
 
 
