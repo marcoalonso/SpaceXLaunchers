@@ -29,6 +29,14 @@ Una aplicación iOS desarrollada con UIKit que muestra los lanzamientos de Space
 
 - Cada lanzamiento puede mostrar el video del lanzamiento en un reproductor integrado
 
+- ### 🔐 Firebase Authentication
+
+- Inicio de sesión con **email y contraseña**
+- Registro de nuevos usuarios
+- Verificación del usuario logueado
+- Logout con retorno a la pantalla de login
+- You can login with: email: user@user.com  password: 123456
+
 ### 🔎 Búsqueda avanzada
 
 - SearchBar integrada para filtrar lanzamientos por:
@@ -63,6 +71,20 @@ Cada nueva funcionalidad se desarrolló en su propia rama y luego fue mergeada e
 iOS Developer | Swift | SwiftUI | UIKit  
 
 ---
+![image](https://github.com/user-attachments/assets/fc4439c6-280e-4805-8ff9-c29a3a2e2485)
+
+
+
+![image](https://github.com/user-attachments/assets/6efc917d-2634-493c-b885-3de742ddaf1b)
+
+
+
+![image](https://github.com/user-attachments/assets/dc4e9606-22b3-4ccd-bcb6-5d9a117e58b4)
+
+
+![image](https://github.com/user-attachments/assets/c51eb32b-4a31-4ec7-a424-97352465a07b)
+
+
 
 ![image](https://github.com/user-attachments/assets/3db8f5ec-f6f2-4222-bfdd-ed9d26953e9e)
 
